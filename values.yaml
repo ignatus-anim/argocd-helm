@@ -1,0 +1,19 @@
+replicaCount: 2
+
+image:
+  repository: 202533544511.dkr.ecr.eu-west-1.amazonaws.com/ignite-app-repo
+  pullPolicy: Always
+  tag: "latest"
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000
+
+resources:
+  limits:
+    cpu: "100m"
+    memory: "128Mi"
+  requests:
+    cpu: "50m"
+    memory: "64Mi"
